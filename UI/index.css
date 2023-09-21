@@ -1,0 +1,235 @@
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  color: rgb(197, 252, 255);
+  font-family: "Poppins", sans-serif;
+  background-color: #040d12;
+}
+
+
+.main-nav {
+  border: 1px solid black;
+  background-color: #272d3a;
+  border-radius: 10px;
+  box-shadow: 3px black;
+  margin: 1rem;
+  vertical-align: middle;
+}
+
+.curr {
+  color: blue;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-nav a {
+  font-size: 1.125rem;
+  margin-left: 6px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+img {
+  margin: 5px;
+  border-radius: 50px;
+  border: 2px solid #93b1a6;
+}
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  transition: 0.8s;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+  text-decoration: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+a:hover {
+  color: #0093b8;
+  background-color: transparent;
+  transition: 0.8s;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.right {
+  float: right;
+}
+
+#login {
+  margin-right: 20px;
+}
+
+p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+h1 {
+  margin-bottom: 0px;
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.left,
+.right {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+#account {
+  margin-right: 10px;
+}
+
+.sec {
+  border: 2.75px solid black;
+  margin: 3px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #183d3d;
+}
+
+#sec1, #sec2, #session {
+  display: flex;
+  flex-direction: row;
+}
+
+.items1, .items2 {
+  border: 2.5px solid #93b1a6;
+  margin: 3px;
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.row1 {
+  flex-direction: row;
+  display: flex;
+}
+.cntrlMain {
+  display: flex;
+  flex-direction: row;
+}
+h2 {
+  text-align: center;
+  padding: 0;
+  margin-top: 0;
+  border: 2.5px solid #00576f;
+  border-radius: 15px;
+  background-color: #254a4a;
+}
+
+.terminal {
+  width: 90%; /* Terminal occupies 100% width of its parent */
+  max-width: 800px;
+  margin: 0 10px;
+  padding: 10px;
+  border: 2px solid #666;
+  background-color: #1f1e1e;
+  border-radius: 10px;
+  color: #666;
+  font-size: small;
+}
+
+.terminal-output {
+  max-height: 100px; /* Limit the maximum height for scrolling */
+  overflow-y: scroll;
+  border-bottom: 1px solid #333;
+  padding: 10px;
+  scrollbar-width: thin; /* Hide the scrollbar on non-webkit browsers */
+  scrollbar-color: #666 transparent;
+}
+
+/* Style the scrollbar track */
+.terminal-output::-webkit-scrollbar {
+  width: 8px; /* Set the scrollbar width */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.terminal-output::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.terminal-input {
+  width: 90%;
+  margin-bottom: 0;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+}
+
+
+/* Add CSS styles as needed */
+#camera-feed {
+    width: auto;
+    max-width: 640px; /* Set a maximum width for the video element */
+    height: auto;
+    border: 2px solid #333;
+}
+
+.stats {
+    border: 2.5px solid #93b1a6;
+    border-radius:7px;
+    padding: 5px;
+    flex-wrap: wrap;
+    width: max-content;
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+#output {
+    height: max-content;
+}
+
+.ai {
+    background-color: #272d3a;
+    color: #93b1a6;
+    display: flex;
+    padding: 5px;
+    border: 1px solid rgb(184, 234, 236);
+    margin: 5px;
+    border-radius: 7px;
+}
+#session {
+    display: flex;
+    flex-direction: row;
+}
+#time {
+    background-color: #0b3131;
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.info {
+    border: 2.5px solid #93b1a6;
+    border-radius:7px;
+    padding: 5px;
+    flex-wrap: wrap;
+    width: max-content;
+    margin-left: 5px;
+    font-size: 18px;
+}
