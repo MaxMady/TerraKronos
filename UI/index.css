@@ -10,6 +10,19 @@ body {
   background-color: #040d12;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #4d4d4d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b6a6a;
+  border-radius: 5px;
+}
+
 
 .main-nav {
   border: 1px solid black;
@@ -77,14 +90,6 @@ a:active {
 #login {
   margin-right: 20px;
 }
-
-p {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 5px;
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
 h1 {
   margin-bottom: 0px;
   background: -webkit-linear-gradient(white, #38495a);
@@ -111,7 +116,7 @@ h1 {
   background-color: #183d3d;
 }
 
-#sec1, #sec2, #session {
+#sec1, #sec2, #session, #info {
   display: flex;
   flex-direction: row;
 }
@@ -147,7 +152,7 @@ h2 {
   padding: 10px;
   border: 2px solid #666;
   background-color: #1f1e1e;
-  border-radius: 10px;
+  border-radius: 7px;
   color: #666;
   font-size: small;
 }
@@ -218,7 +223,7 @@ h2 {
     display: flex;
     flex-direction: row;
 }
-#time {
+#time, #status {
     background-color: #0b3131;
     border-radius: 4px;
     padding-left: 2px;
@@ -233,3 +238,56 @@ h2 {
     margin-left: 5px;
     font-size: 18px;
 }
+
+#graph {
+  background-color: white;
+}
+
+.label-container {
+  display: flex; /* Use flex layout to align items horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Style for the button */
+.button {
+  /* Add your button styles here */
+  padding: 10px 10px;
+  background-color: #ff2929;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: background-color 0.5s ease-in-out;
+}
+
+#irrig {
+  font-size: 20px;
+}
+
+p {
+  text-align: center;
+  font-size: larger;
+  padding: 0px;
+  margin: 0px;
+  background-color: #122e2e;
+  border: 1px solid #93b1a6;
+  border-radius: 8px;
+  margin: 5px;
+  margin-bottom: 0px;
+}
+
+#greph {
+  border-color: #040d12;
+}
+
+@keyframes buttonClickAnimation {
+  0% { transform: scale(-1); }
+  50% { transform: scale(-1.2); }
+  100% { transform: scale(-1); }
+}
+
+.button-clicked {
+  animation: buttonClickAnimation 0.5s ease-in-out;
+}
+
