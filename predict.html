@@ -1,0 +1,53 @@
+(async() => {
+    const labels = ['Pepper__bell___Bacterial_spot', 'Pepper__bell___healthy', 'Potato___Early_blight', 'Potato___healthy',
+              'Potato___Late_blight', 'Tomato__Target_Spot', 'Tomato__Tomato_mosaic_virus',
+              'Tomato__Tomato_YellowLeaf__Curl_Virus', 'Tomato_Bacterial_spot', 'Tomato_Early_blight', 'Tomato_healthy',
+              'Tomato_Late_blight', 'Tomato_Leaf_Mold', 'Tomato_Septoria_leaf_spot', 'Tomato_Spider_mites_Two_spotted_spider_mite']
+        const MODEL_URL = 'tfjs/model.json';
+        
+        const model = await tf.loadLayersModel(MODEL_URL);
+        await model.summary()
+        console.log(`Successfully loaded model!`)
+        let head = document.getElementById("load").innerHTML = "<h3>Model has been loaded! Enjoy your stay!\n<b>Upload pokemon image below</b></h3>";
+      document.getElementById("file-input").disabled = false
+      
+        let imageElement = document.getElementById('myImg');
+        const predictionElement = document.getElementById('prediction');
+        
+      const inputShape = [null, 125, 200, 3];
+        document.querySelector('input[type="file"]').addEventListener('change', async function() {
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                reader.onload = async (event) => {
+                  const img = document.querySelector('img');
+                  img.onload = async () => {
+                    console.log(img.src)
+                    // Preprocess the image
+                    imageElement = img
+                    const tensor = tf.browser.fromPixels(img)
+                      .resizeNearestNeighbor([125, 200])
+                      .toFloat()
+                      .expandDims();
+    
+                      console.log(`Loading...`)
+                    const mean = tf.tensor([0.485, 0.456, 0.406]);
+                    const std = tf.tensor([0.229, 0.224, 0.225]);
+                    const normalized = tensor.div(tf.scalar(255)).sub(mean).div(std);
+                    const reshaped = normalized.reshape([-1, 125, 200, 3]);
+    
+                    const prediction = await model.predict(reshaped).data();
+    
+                    console.log(prediction)
+                    const classNames = labels
+                    const classIndex = tf.argMax(prediction).dataSync()[0];
+                    const className = classNames[classIndex];
+      
+                    // Display the prediction
+                    predictionElement.innerHTML = `Predicted Pokemon: ${className}`;
+                  };
+                  img.src = event.target.result;
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+      })();
